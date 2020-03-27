@@ -1,0 +1,61 @@
+{% extends "base.html.twig" %}
+{% block head %}
+    <style>
+        body {
+            padding-top: 56px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <body>
+    {% include "header.html.twig" %}
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <div class="row">
+                        <!-- Blog Entries Column -->
+                        <div class="col-md-8">
+                            <h1 class="my-4 titleBlog">Post something</h1>
+                            <!-- Blog Post -->
+                            <div class="card mb-4">
+                                {{ form_start(form) }}
+                                <div class="card-body">
+                                    <h2 class="card-title"></h2>
+                                    {{ form_row(form.author) }}
+                                    {{ form_row(form.title) }}
+                                    {{ form_row(form.message) }}
+                                </div>
+                                {{ form_end(form) }}
+                            </div>
+
+                        </div>
+                        <!-- Sidebar Widgets Column -->
+                        <div class="col-md-4">
+                            <!-- Search Widget -->
+
+                            <!-- Side Widget -->
+                            <div class="card my-4">
+                                <h5 class="card-header">Here you can</h5>
+                                <div class="card-body text-left">
+                                    Please post something sensiible and don't use this forum to post provocing, insulting or mean stuff ... <br>
+                                    You get the idea :)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+        </div>
+    </header>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Virtual Hand 2020</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    </body>
+{% endblock %}

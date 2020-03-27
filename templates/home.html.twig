@@ -1,0 +1,75 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+  <body>
+      {% include "header.html.twig" %}
+
+  <!-- Full Page Image Header with Vertically Centered Content -->
+  <header class="masthead">
+      <div class="container h-100">
+          <div class="row h-100 align-items-center">
+              <div class="col-12 text-center">
+                  <br>
+                  <br>
+                  <h1 class="font-weight-light">COVID-19 Luxembourg</h1>
+
+                  <h3 class="font-weight-light">Help or Get some help</h3>
+                  <br>
+                  {% for message in app.flashes('success') %}
+                      <div class="alert alert-success">
+                          <i class="fa fa-window-close"></i>
+                          {{ message }}
+                      </div>
+                  {% endfor %}
+                  {# read and display just one flash message type #}
+                  {% for message in app.flashes('error') %}
+                      <div class="alert alert-danger">
+                          <i class="fa fa-window-close"></i>
+                          {{ message }}
+                      </div>
+                  {% endfor %}
+                  <p>
+                      <code>
+                          In these times of need, we have to stand by each other as much as we can. <br>
+                          Via this app you can offer your valuable help.
+                          <br>
+                          Who needs help? <br>
+                          Vulnerable people, but also people in vital positions that need day to day help, when they are out there helping mankind.
+                          <br>
+                          <br>
+                          <strong>Please let us subscribe and HELP EACH OTHER!</strong>
+                          <br>
+                          <br>
+                          How does it work?
+                          <br>
+                          People who need help can find and click on your profile (based on the services you provide).
+                          <br>
+                          Make sure you speak to the person before you engage.
+                          <br>
+                          Your personal data is being used for support purposes only, you will not receive spam nor will your information be sent to third parties.
+                          This application is created voluntarily and has no financial gain.
+                      </code>
+                  </p>
+                  <br>
+                  <br>
+                  <blockquote class="blockquote">
+                          <p class="mb-0">"Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead".</p>
+                          <footer class="blockquote-footer">Mother Teresa <cite title="Source Title"></cite></footer>
+                  </blockquote>
+              </div>
+              <div class="btn btn-outline-secondary btn-lg btn-block">
+                      <a href="{{ path('helpers') }}" style="color:grey; ">Offer Help</a>
+              </div>
+          </div>
+      </div>
+  </header>
+    {% include "footer.html.twig" %}
+      <script type="text/javascript">
+          $(function () {
+              $('.alert').on('click', function () {
+                  $('.alert').remove();
+              });
+          });
+      </script>
+  </body>
+{% endblock %}

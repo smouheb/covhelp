@@ -2,11 +2,51 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style type="text/css">
+            .masthead {
+                height: 100vh;
+                min-height: 500px;
+                background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+
+            }
+
+            .fa-handshake-o {
+                color: deeppink;
+            }
+
+            .fa-user-md, .titleBlog {
+                color: deeppink;
+            }
+
+            .fa-heartbeat {
+
+                color: deeppink;
+            }
+
+            a:hover{
+                color:white !important;
+                text-decoration: none;
+            }
+
+            .colnav{
+                color: deeppink !important;
+                font-weight: bold;
+            }
+        </style>
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+        {% endblock %}
+        {% block javascripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        {% endblock %}
     </body>
 </html>

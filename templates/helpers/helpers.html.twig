@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <body>
+        {% include "header.html.twig" %}
+        <header class="masthead">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 text-center">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h1 class="font-weight-light">COVID-19 Luxembourg</h1>
+                        <br>
+                        <p>
+                            <code>
+                                How does it work?
+                                <br>
+                                People who need help can find and click on your profile (based on the services you provide).
+                                <br>
+                                Make sure you speak to the person before you engage.
+                                <br>
+                                Your personal data is being used for support purposes only, you will not receive spam nor will your information be sent to third parties.
+                                This application is created voluntarily and has no financial gain.
+                            </code>
+                        </p>
+                        <br>
+                        <br>
+                        <div class="offset-md-3 col-md-6">
+                        {{ form_start(form) }}
+                            {{ form_row(form.firstname) }}
+                            {{ form_row(form.lastname) }}
+                            {{ form_row(form.email) }}
+                            {{ form_row(form.phonenumber) }}
+                            {{ form_row(form.address.vars.prototype) }}
+                            <label for="selection">Select what you can help with</label>
+                            <select class="browser-default custom-select" name="ListOfOptions[]" id="liopt" multiple>
+                                <option value="Groceries" name="groceries">Groceries</option>
+                                <option value="Garbage" name="garbage">Through out garbage</option>
+                                <option value="WalkingDog">Walking Dog</option>
+                                <option value="DryCleaning">Pick up or Bring dry cleaning</option>
+                                <option value="DeliverTakeAway">Deliver your take away</option>
+                            </select>
+                            {{ form_end(form) }}
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </body>
+{% endblock %}

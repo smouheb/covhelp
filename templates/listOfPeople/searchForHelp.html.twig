@@ -1,0 +1,108 @@
+{% extends "base.html.twig" %}
+{% block head %}
+    <style>
+        .explainText{
+            color:deeppink !important;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <body>
+    {% include "header.html.twig" %}
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <br>
+                    <br>
+                    <br>
+                    {% include 'flashMessage.html.twig' %}
+                    <br>
+                    <h1 class="font-weight-light">COVID-19 Luxembourg</h1>
+                    <br>
+                    <br>
+                    <div class="alert alert-info">
+                        <p class="text-centers ">
+                            <strong>Select what you need and press submit</strong> <br>
+                            <strong>So what do you need help with?</strong>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="" action="{{ path('searchForHelp') }}" method="post">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="Groceries" value="Groceries" id="defaultCheck1">
+                                    <label class="form-check-label " for="defaultCheck1">
+                                        <strong>Groceries</strong>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="Garbage" value="Garbage" id="defaultCheck1">
+                                    <label class="form-check-label " for="defaultCheck1">
+                                        <strong>Garbage</strong>
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Walking Dogs" name="Walking Dogs" id="defaultCheck1">
+                                    <label class="form-check-label " for="defaultCheck1">
+                                        <strong>Walking Dogs</strong>
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="Dry Cleaning pick up" value="Dry Cleaning pick up" id="defaultCheck1">
+                                    <label class="form-check-label " for="defaultCheck1">
+                                        <strong>Dry Cleaning pick up</strong>
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="Deliver Take away" value="Deliver Take away" id="defaultCheck1">
+                                    <label class="form-check-label " for="defaultCheck1">
+                                        <strong>Deliver Take away</strong>
+                                    </label>
+                                </div>
+                                <br>
+                                <input type="submit" class="btn btn-primary" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script type="text/javascript">
+        $(function () {
+
+            $('.groceries').on('click', function () {
+                $('#groceries').removeAttr('hidden');
+                $('.groceries').remove();
+            });
+
+            $('.garbage').on('click', function () {
+                $('#garbage').removeAttr('hidden');
+                $('.garbage').remove();
+            });
+
+            $('.dryCleaning').on('click', function () {
+                $('#dryCleaning').removeAttr('hidden');
+                $('.dryCleaning').remove();
+            });
+
+            $('.deliverTakeAway').on('click', function () {
+                $('#deliverTakeAway').removeAttr('hidden');
+                $('.deliverTakeAway').remove();
+            });
+
+            $('.walkingDog').on('click', function () {
+                $('#walkingDog').removeAttr('hidden');
+                $('.walkingDog').remove();
+            });
+        })
+    </script>
+    </body>
+{% endblock %}

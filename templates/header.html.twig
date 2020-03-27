@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('home') }}"> <i class="fa fa-heartbeat"></i> Virtual Hand</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('home') }}">
+                            <i class="fa fa-home fa-lg"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link colnav" href="{{ path('helpers') }}" >Offer Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link colnav" href="{{ path('searchForHelp') }}">They can help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link colnav" href="{{ path('listOfPost') }}">Forum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link colnav" href="{{ path('contact') }}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}

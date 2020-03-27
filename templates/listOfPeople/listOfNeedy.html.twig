@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <body>
+    {% include "header.html.twig" %}
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <h1 class="font-weight-light">They need your Help</h1>
+                    <br>
+                    <br>
+                    {% include "flashMessage.html.twig" %}
+                    <table class="table  table-bordered">
+                        <thead>
+                        <tr class="table-light">
+                            <th>First name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>City</th>
+                            <th>Postal code</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            {% for list in lists %}
+                                <td>{{ list.firstname }}</td>
+                                <td>{{ list.lastname }}</td>
+                                <td>{{ list.email }}</td>
+                                <td>{{ list.phonenumber }}</td>
+                                <td>{{ list.city }}</td>
+                                <td>{{ list.postalcode }}</td>
+                                {% if list.is_helping == 1 %}
+                                    <td>Can Help</td>
+                                {% else %}
+                                    <td>Need Help</td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </header>
+    {% include "footer.html.twig" %}
+    </body>
+{% endblock %}

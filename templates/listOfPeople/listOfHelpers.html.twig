@@ -1,0 +1,82 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <body>
+        {% include "header.html.twig" %}
+        <header class="masthead">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="row">
+                        <br>
+                        <div class="col-md-3">
+                            <button>
+                                <i class="fa fa-arrow-left fa-5x"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center">
+                        <h1 class="font-weight-light">They can help you</h1>
+                        <br>
+                        <br>
+                        {% include "flashMessage.html.twig" %}
+                       <table class="table  table-bordered">
+                            <thead>
+                                <tr class="table-light">
+                                    <th>First name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>City</th>
+                                    <th>Postal code</th>
+                                    <th>item1: </th>
+                                    <th>item2: </th>
+                                    <th>item3: </th>
+                                    <th>item4: </th>
+                                    <th>item5: </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for list in lists %}
+                                    <tr>
+                                       <td>{{ list.firstname }}</td>
+                                       <td>{{ list.lastname }}</td>
+                                       <td>{{ list.email }}</td>
+                                       <td>{{ list.phonenumber }}</td>
+                                       <td>{{ list.city }}</td>
+                                       <td>{{ list.postalcode }}</td>
+                                    {% if list.groceries is not null %}
+                                        <td>Groceries</td>
+                                    {% endif %}
+                                    {% if list.garbage is not null %}
+                                        <td>Throwing out garbage</td>
+                                    {% endif %}
+                                    {% if list.walking_dog is not null %}
+                                        <td>Walking the dog</td>
+                                    {% endif %}
+                                    {% if list.dry_cleaning is not null %}
+                                        <td>Pick up or drop dry cleaning</td>
+                                    {% endif %}
+                                    {% if list.deliver_take_away is not null %}
+                                        <td>Deliver your take away</td>
+                                {% endif %}
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td>No one has been recorded yet</td>
+                                    </tr>
+                            {% endfor %}
+                            </tbody>
+                       </table>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% include "footer.html.twig" %}
+        <script type="text/javascript">
+            $(function () {
+                $('.fa').on('click', function () {
+                    window.history.back();
+                })
+            })
+        </script>
+    </body>
+{% endblock %}

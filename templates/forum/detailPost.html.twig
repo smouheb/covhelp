@@ -1,0 +1,108 @@
+{% extends "base.html.twig" %}
+{% block head %}
+    <style>
+        body {
+            padding-top: 56px;
+        }
+
+        .fa-comment{
+            color: deeppink;
+        }
+
+        .comment-wrapper .media-list .media img {
+            width:64px;
+            height:64px;
+            border:2px solid #e5e7e8;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <body>
+    {% include "header.html.twig" %}
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <br>
+                    <br>
+                    <br>
+                    <h1 class="my-4 titleBlog">Posted by people</h1>
+                    <div class="row">
+                        <!-- Blog Entries Column -->
+
+                        <div class="col-md-8">
+                            <!-- Blog Post -->
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h2 class="card-title">{{ detailPost[0].title }}</h2>
+                                        <p class="card-text">{{ detailPost[0].message }}</p>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        {{ detailPost[0].post_date|date("l d M Y") }} by
+                                        <span>{{ detailPost[0].author }}</span>
+                                    </div>
+                                </div>
+                                {% for comments in detailPost %}
+                                    {% if  comments.pseudo is not null %}
+                                        <div class="card mb-4">
+                                            <ul class="media-list">
+                                                <li class="media">
+                                                    <a href="#" class="pull-left">
+                                                        <i class="fa fa-comment fa-3x"></i>
+                                                    </a>
+                                                    <div class="media-body">
+                                                    <span class="text-muted">
+                                                        <small class="text-muted">posted on : {{ comments.date_post|date("l d M Y") }}</small>
+                                                    </span>
+                                                        <br>
+                                                        <strong class="text-success">@{{ comments.pseudo }}</strong>
+                                                        <p>
+                                                            {{ comments.comment }}.
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    {% else %}
+                                        <div>
+                                            <i>No comments recorded... be the first</i>
+                                        </div>
+                                    {% endif %}
+                            {% endfor %}
+                        </div>
+                        <!-- Sidebar Widgets Column -->
+                        <div class="col-md-4">
+                            <div class="col-mb-6">
+                                <!-- Search Widget -->
+                                <div class="card my-4">
+                                    <h5 class="card-header">Questions / Comment</h5>
+                                    <div class="card-body">
+                                            {{ form_start(form) }}
+                                            <div class="card-text">
+                                                {{ form_row(form.pseudo) }}
+                                            </div>
+                                            <div class="card-text">
+                                                {{ form_row(form.comment) }}
+                                            </div>
+                                            {{ form_end(form) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+        </div>
+    </header>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Virtual Hand 2020</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    </body>
+{% endblock %}

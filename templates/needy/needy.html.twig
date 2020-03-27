@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <body>
+    {% include "header.html.twig" %}
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <br>
+                    <br>
+                    <br>
+                    <h1 class="font-weight-light">COVID-19 Luxembourg</h1>
+                    <br>
+                    <br>
+                    <div class="offset-md-3 col-md-6">
+                        {{ form_start(form) }}
+                        {{ form_row(form.firstname) }}
+                        {{ form_row(form.lastname) }}
+                        {{ form_row(form.email) }}
+                        {{ form_row(form.phonenumber) }}
+                        {{ form_row(form.address.vars.prototype) }}
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% include "footer.html.twig" %}
+    </body>
+{% endblock %}
