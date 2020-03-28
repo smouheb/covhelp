@@ -12,6 +12,8 @@
                         <br>
                         <h1 class="font-weight-light">COVID-19 Luxembourg</h1>
                         <br>
+                        <br>
+                        <br>
                         <p>
                             <code>
                                 How does it work?
@@ -26,17 +28,21 @@
                         </p>
                         <br>
                         <br>
-                        <div class="offset-md-3 col-md-6">
+                        <div class="col-md-12">
                         {{ form_start(form) }}
+                            <div class="label"><strong>First name / Prénom</strong></div>
                             {{ form_row(form.firstname) }}
+                            <div class="label"><strong>Last name / Nom de famille</strong></div>
                             {{ form_row(form.lastname) }}
+                            <div class="label"><strong>Email</strong></div>
                             {{ form_row(form.email) }}
+                            <div class="label"><strong>Phone number / Téléphone</strong></div>
                             {{ form_row(form.phonenumber) }}
                             {{ form_row(form.address.vars.prototype) }}
-                            <label for="selection">Select what you can help with</label>
+                            <label for="selection"><strong>Select what you can help with</strong></label>
                             <select class="browser-default custom-select" name="ListOfOptions[]" id="liopt" multiple>
                                 <option value="Groceries" name="groceries">Groceries</option>
-                                <option value="Garbage" name="garbage">Through out garbage</option>
+                                <option value="Garbage" name="garbage">Throw out garbage</option>
                                 <option value="WalkingDog">Walking Dog</option>
                                 <option value="DryCleaning">Pick up or Bring dry cleaning</option>
                                 <option value="DeliverTakeAway">Deliver your take away</option>

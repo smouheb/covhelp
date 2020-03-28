@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Contact;
 use App\Form\ContactType;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

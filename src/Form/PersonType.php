@@ -17,16 +17,16 @@ class PersonType extends AbstractType
     {
         $builder
             ->add('firstname', TextType::class, [
-                'label' => "First Name / Prénom"
+                'label' => false
             ])
             ->add('lastname', TextType::class, [
-                'label' => 'Last name / Nom de famille'
+                'label' => false
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Email'
+                'label' => false
             ])
             ->add('phonenumber', TextType::class, [
-                'label' => 'Phone number / téléphone'
+                'label' => false
             ])
             ->add('address', CollectionType::class, [
                 'entry_type' => AddressType::class,

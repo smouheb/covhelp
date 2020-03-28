@@ -15,9 +15,11 @@ class CommentPostType extends AbstractType
     {
         $builder
             ->add('pseudo', TextType::class, [
-                'label' => 'Name'
+                'label' => false
             ])
-            ->add('comment')
+            ->add('comment', TextType::class, [
+                'label' => false
+            ])
             ->add('post', SubmitType::class)
         ;
     }
