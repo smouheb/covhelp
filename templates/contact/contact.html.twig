@@ -22,10 +22,15 @@
                         <br>
                         <div class="offset-md-3 col-md-6">
                             {{ form_start(form) }}
+                            <div class="label"><strong>First Name</strong></div>
                             {{ form_row(form.firstname) }}
+                            <div class="label"><strong>Last Name</strong></div>
                             {{ form_row(form.lastname) }}
+                            <div class="label"><strong>Email</strong></div>
                             {{ form_row(form.email) }}
+                            <div class="label"><strong>Subject</strong></div>
                             {{ form_row(form.subject) }}
+                            <div class="label"><strong>Message</strong></div>
                             {{ form_row(form.message) }}
                             {{ form_end(form) }}
                             <br>
@@ -36,5 +41,6 @@
                 </div>
             </div>
         </header>
+    {% include "footer.html.twig" %}
     </body>
 {% endblock %}

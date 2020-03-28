@@ -3,7 +3,7 @@
     <body>
         {% include "header.html.twig" %}
         <header class="masthead">
-            <div class="container h-100">
+            <div class="container-fluid">
                 <div class="row h-100 align-items-center">
                     <div class="col-12 text-center">
                         <br>
@@ -28,33 +28,45 @@
                         </p>
                         <br>
                         <br>
-                        <div class="col-md-12">
-                        {{ form_start(form) }}
-                            <div class="label"><strong>First name / Prénom</strong></div>
-                            {{ form_row(form.firstname) }}
-                            <div class="label"><strong>Last name / Nom de famille</strong></div>
-                            {{ form_row(form.lastname) }}
-                            <div class="label"><strong>Email</strong></div>
-                            {{ form_row(form.email) }}
-                            <div class="label"><strong>Phone number / Téléphone</strong></div>
-                            {{ form_row(form.phonenumber) }}
-                            {{ form_row(form.address.vars.prototype) }}
-                            <label for="selection"><strong>Select what you can help with</strong></label>
-                            <select class="browser-default custom-select" name="ListOfOptions[]" id="liopt" multiple>
-                                <option value="Groceries" name="groceries">Groceries</option>
-                                <option value="Garbage" name="garbage">Throw out garbage</option>
-                                <option value="WalkingDog">Walking Dog</option>
-                                <option value="DryCleaning">Pick up or Bring dry cleaning</option>
-                                <option value="DeliverTakeAway">Deliver your take away</option>
-                            </select>
-                            {{ form_end(form) }}
-                            <br>
-                            <br>
-                            <br>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                {{ form_start(form) }}
+                                <div class="label"><strong>First name / Prénom</strong></div>
+                                {{ form_row(form.firstname) }}
+                                <div class="label"><strong>Last name / Nom de famille</strong></div>
+                                {{ form_row(form.lastname) }}
+                                <div class="label"><strong>Email</strong></div>
+                                {{ form_row(form.email) }}
+                                <div class="label"><strong>Phone number / Téléphone</strong></div>
+                                {{ form_row(form.phonenumber) }}
+                                <div class="label"><strong>City / Ville</strong></div>
+                                {{ form_row(form.address.vars.prototype.city) }}
+                                <div class="label"><strong>Postal code / Code postale</strong></div>
+                                {{ form_row(form.address.vars.prototype.postalcode) }}
+                                <br>
+                                <br>
+                                <div class="offset-md-2">
+                                    <label for="selection"><strong>Select what you can help with</strong></label>
+                                    <select class="browser-default custom-select" name="ListOfOptions[]" id="liopt" multiple required>
+                                        <option value="Groceries" name="groceries">Groceries</option>
+                                        <option value="Garbage" name="garbage">Throw out garbage</option>
+                                        <option value="WalkingDog">Walking Dog</option>
+                                        <option value="DryCleaning">Pick up or Bring dry cleaning</option>
+                                        <option value="DeliverTakeAway">Deliver your take away</option>
+                                    </select>
+                                </div>
+
+                                {{ form_end(form) }}
+                                <br>
+                                <br>
+                                <br>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </header>
+        {% include "footer.html.twig" %}
     </body>
 {% endblock %}

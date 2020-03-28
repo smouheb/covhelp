@@ -7,14 +7,16 @@
   <!-- Full Page Image Header with Vertically Centered Content -->
   <header class="masthead">
       <div class="container h-100">
+          <br>
+          <br>
+          <br>
           <div class="row h-100 align-items-center">
               <div class="col-12 text-center">
-                  <br>
-                  <br>
                   <h1 class="font-weight-light">COVID-19 Luxembourg</h1>
-
-                  <h3 class="font-weight-light">Help or Get some help</h3>
                   <br>
+                  <br>
+                  <br>
+                  <h3 class="font-weight-light">Help or Get some help</h3>
                   {% for message in app.flashes('success') %}
                       <div class="alert alert-success">
                           <i class="fa fa-window-close"></i>
@@ -51,14 +53,14 @@
                       </code>
                   </p>
                   <br>
-                  <br>
                   <blockquote class="blockquote">
                           <p class="mb-0">"Love is not patronizing and charity isn't about pity, it is about love. Charity and love are the same -- with charity you give love, so don't just give money but reach out your hand instead".</p>
                           <footer class="blockquote-footer">Mother Teresa <cite title="Source Title"></cite></footer>
                   </blockquote>
-              </div>
-              <div class="btn btn-outline-secondary btn-lg btn-block">
-                      <a href="{{ path('helpers') }}" style="color:grey; ">Offer Help</a>
+                  <br>
+                  <div class="btn btn-outline-secondary btn-lg btn-block">
+                      <a href="{{ path('helpers') }}" style="color:grey; " >Offer Help</a>
+                  </div>
               </div>
           </div>
       </div>
