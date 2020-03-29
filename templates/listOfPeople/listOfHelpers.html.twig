@@ -23,8 +23,6 @@
                                 <tr class="table-light">
                                     <th>First name</th>
                                     <th>Last Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
                                     <th>City</th>
                                     <th>Postal code</th>
                                     <th>item1: </th>
@@ -39,25 +37,38 @@
                                     <tr>
                                        <td>{{ list.firstname }}</td>
                                        <td>{{ list.lastname }}</td>
-                                       <td>{{ list.email }}</td>
-                                       <td>{{ list.phonenumber }}</td>
                                        <td>{{ list.city }}</td>
                                        <td>{{ list.postalcode }}</td>
                                     {% if list.groceries is not null %}
                                         <td>Groceries</td>
+                                    {% else %}
+                                        <td>-</td>
                                     {% endif %}
                                     {% if list.garbage is not null %}
                                         <td>Throwing out garbage</td>
+                                    {% else %}
+                                        <td>-</td>
                                     {% endif %}
                                     {% if list.walking_dog is not null %}
                                         <td>Walking the dog</td>
+                                    {% else %}
+                                        <td>-</td>
                                     {% endif %}
                                     {% if list.dry_cleaning is not null %}
                                         <td>Pick up or drop dry cleaning</td>
+                                    {% else %}
+                                        <td>-</td>
                                     {% endif %}
                                     {% if list.deliver_take_away is not null %}
                                         <td>Deliver your take away</td>
+                                    {% else %}
+                                        <td>-</td>
                                 {% endif %}
+                                        <td>
+                                            <a href="{{ path('requestHelp', {'id':list.person_id}) }}">
+                                                <input type="button" class="btn btn-primary" value="request">
+                                            </a>
+                                        </td>
                                     </tr>
                                 {% else %}
                                     <tr>

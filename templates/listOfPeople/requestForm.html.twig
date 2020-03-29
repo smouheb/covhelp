@@ -1,0 +1,59 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <body>
+    {% include "header.html.twig" %}
+    <header class="masthead">
+        <div class="container-fluid">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h1 class="font-weight-light">COVID-19 Luxembourg</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <p>
+                        <code>
+                            How does it work?
+                            <br>
+                            We will send the message to that specific person and will give you a wuick summary of what you need
+                            and your actual message
+                            <br>
+                            <br>
+                            Your personal data is being used for support purposes only, you will not receive spam nor will your information be sent to third parties.
+                            This application is created voluntarily and has no financial gain.
+                        </code>
+                    </p>
+                    <br>
+                    <br>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            {{ form_start(form) }}
+                            <div class="label"><strong>First name / Prénom</strong></div>
+                            {{ form_row(form.firstname) }}
+                            <div class="label"><strong>Last name / Nom de famille</strong></div>
+                            {{ form_row(form.lastname) }}
+                            <div class="label"><strong>Email</strong></div>
+                            {{ form_row(form.email) }}
+                            <div class="label"><strong>Phone number / Téléphone</strong></div>
+                            {{ form_row(form.phone) }}
+                            <div class="label"><strong>Preffered language / Langue preferres</strong></div>
+                            {{ form_row(form.language) }}
+                            <div class="label"><strong>Message</strong></div>
+                            {{ form_row(form.message) }}
+                            {{ form_end(form) }}
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    {% include "footer.html.twig" %}
+    </body>
+{% endblock %}
